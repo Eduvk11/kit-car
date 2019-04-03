@@ -1,0 +1,42 @@
+@import "../../../partials/mixin";
+.btn__info{
+  position: absolute;
+  right: 20px;
+  padding-top: 24px;
+  margin-left: auto;
+  fill: red;
+  width: 62px;
+  @include btn__info;
+}
+.icon{
+  @include icon;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid;
+
+}
+
+th,
+td {
+  border: 1px solid;
+  padding: 5px;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+

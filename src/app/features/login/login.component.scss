@@ -1,0 +1,39 @@
+@import "../../../partials/mixin";
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.btn__info--close {
+  position: absolute;
+  right: 20px;
+  margin-left: auto;
+  fill: red;
+  @include btn__info;
+}
+
+.btn__info--save{
+  fill:rgb(134, 224, 16);
+  @include btn__info;
+}
+
+.btn__info--regis{
+  position: absolute;
+  left: 20px;
+  margin-right: auto;
+  fill:darkgrey;
+  @include btn__info;
+}
+
+i {
+  fill:darkgrey;
+  width: 72px;
+}
+.icon{
+  @include icon;
+}
+
+

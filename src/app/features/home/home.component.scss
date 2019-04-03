@@ -1,0 +1,378 @@
+@import "../../../partials/mixin";
+//====================================HEADER=======================================================
+.btn__info {
+  @include btn__info;
+}
+
+.icon {
+  @include icon;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+h1 {
+  font-size: 24px;
+}
+//======================================IMAGEN COCHE=================================================
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-img {
+  margin-bottom: -172px;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  transform: translate3d(0, 100%, 0);
+  transition: all linear 1s;
+}
+
+.interior__coche {
+  height: 450px;
+}
+
+.interior__escala-pantalla {
+  fill: silver;
+  cursor: pointer;
+
+}
+
+.screem__cortas-auto {
+  cursor: pointer;
+}
+
+.interior__retro-izq {
+  cursor: pointer;
+  fill: silver;
+}
+
+.interior__retro-dech {
+  cursor: pointer;
+  fill: silver;
+}
+
+.interior__ventanilla-izq {
+  fill: transparent;
+  cursor: pointer;
+}
+
+svg {
+  overflow: hidden;
+}
+
+.interior__ventanilla-efecto {
+  transform: translateY(-14.71px, -612.3px);
+  transition: all 1000ms;
+  stroke: black;
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.derecha--subir .interior__ventanilla-efecto{
+  transform: none;
+}
+
+
+.interior__ventanilla-efecto2 {
+  transform: translateY(-14.71px, -612.3px);
+  transition: all 1000ms;
+  stroke: black;
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.izquierda--subir .interior__ventanilla-efecto2 {
+  transform: none;
+
+}
+
+//========================================PANTALLA================================================
+.up {
+  display: flex;
+  margin-bottom: -6px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(70, 68, 68);
+  height: 316px;
+  fill: darkgray;
+  position: relative;
+
+}
+
+.elevalunas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  color:darkgray;
+
+}
+
+.ventanilla__dech-subir {
+  @include subir;
+}
+
+.ventanilla__dech-bajar {
+  @include bajar;
+}
+
+.ventanilla__izq-subir {
+  @include subir;
+}
+
+.ventanilla__izq-bajar {
+  @include bajar;
+}
+
+ .marcar:active{
+    fill: rgb(13, 224, 84);
+}
+
+.clima-i {
+  left: 435px;
+  top: 10px;
+  bottom: 51px;
+  @include clima;
+
+}
+
+.clima-d {
+  right: 437px;
+  top: 10px;
+  bottom: 51px;
+  @include clima;
+}
+.btn__clima{
+  @include btn-clima;
+}
+.valor{
+  font-size: 32px;
+  color: darkgray;
+}
+.clima__subir{
+  fill:  rgb(13, 224, 84);
+}
+.clima__bajar{
+  fill:  rgb(13, 224, 84);
+}
+.ventilador {
+  position: absolute;
+  top: 174px;
+  width: 196px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.velocidad {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 72px;
+  height: 48px;
+}
+.ventilador__1 {
+ @include velocidad;
+  height: 16px;
+}
+
+.ventilador__2 {
+ @include velocidad;
+  height: 24px;
+}
+.ventilador__3 {
+ @include velocidad;
+  height: 32px;
+}
+.ventilador__4 {
+ @include velocidad;
+  height: 40px;
+}
+.ventilador__5 {
+ @include velocidad;
+  height: 48px;
+}
+.pintar {
+  background-color: darkgrey;
+}
+//==============================BOTONERA=================================================================
+
+.botonera {
+  height: 64px;
+  justify-content: space-around;
+  display: flex;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  background-color: rgb(70, 68, 68);
+
+}
+
+
+.botonera__btn {
+  width: 48px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  fill: darkgrey;
+  background-color: rgb(70, 68, 68);
+
+  &--cruce,
+  &--cruce-auto {
+    fill: rgb(13, 224, 84)
+  }
+
+  &--largas {
+    fill: blue;
+  }
+
+  &--anti {
+    fill: orange;
+  }
+
+  &--anti-tras {
+    fill: yellow;
+  }
+
+  &--parabrisas,
+  &--parabrisas-auto {
+    fill: rgb(13, 224, 84)
+  }
+
+  &--retrovisor {
+    fill: blue;
+  }
+
+  &--telefono {
+    fill: rgb(13, 224, 84);
+  }
+
+}
+
+//===========================Efectos==========================
+
+.cruce {
+  display: flex;
+  position: absolute;
+  top: 136px;
+  right: 396px;
+  justify-content: space-around;
+
+  &--hidden {
+    display: none;
+  }
+
+  .luz__cruce {
+    width: 250px;
+    height: 125px;
+    border-radius: 120px 120px 0 0;
+    background-image: linear-gradient(rgba(255, 255, 0, 0.295) 80%, #ffffff80 20%);
+  }
+}
+
+.largas {
+  display: flex;
+  position: absolute;
+  top: 136px;
+  right: 396px;
+  justify-content: space-around;
+
+  &--hidden {
+    display: none;
+  }
+
+  .luz__largas {
+    width: 250px;
+    height: 125px;
+    border-radius: 120px 120px 0 0;
+    background-image: linear-gradient(rgba(255, 255, 0, 0.904) 80%, #ffffff80 20%);
+  }
+}
+
+.anti {
+  display: flex;
+  position: absolute;
+  top: 161px;
+  right: 360px;
+  justify-content: space-between;
+  width: 572px;
+
+
+
+  &--hidden {
+    display: none;
+  }
+
+  .luz__anti-izq {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: linear-gradient(rgba(255, 255, 0, 0.295) 70%, #ffffff80 30%, );
+    transform: rotate(26deg);
+  }
+
+  .luz__anti-dech {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: linear-gradient(rgba(255, 255, 0, 0.295) 70%, #ffffff80 30%, );
+    transform: rotate(-26deg);
+  }
+}
+
+.parabrisas {
+  position: absolute;
+  left: 331px;
+  top: -17px;
+  height: 280px;
+  width: 600px;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.limpia {
+  position: absolute;
+  top: 131px;
+  height: 145px;
+  width: 5px;
+  background-color: black;
+  animation: slide 1.5s infinite linear;
+  animation-delay: 0;
+  border-radius: 20%;
+  transform-origin: bottom left;
+  animation-direction: alternate-reverse;
+
+}
+
+.limpia__1 {
+  left: 30%;
+
+}
+
+.limpia__2 {
+  left: 70%;
+}
+
+@keyframes slide {
+  0% {
+    transform: rotate(-85deg)
+  }
+
+  100% {
+    transform: rotate(85deg)
+  }
+}

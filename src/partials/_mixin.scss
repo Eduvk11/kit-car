@@ -1,0 +1,71 @@
+@mixin btn {
+
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  color: darkgrey;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin btn__info {
+  border: 0;
+  cursor: pointer;
+  outline-color: darkgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2px;
+  font-size: 14px;
+  color: darkgrey;
+  text-align: center;
+}
+
+@mixin icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 3px;
+}
+@mixin subir {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-color: 2px darkgrey;
+  background-color: rgb(70, 68, 68);
+  cursor: pointer;
+  outline: none;
+}
+@mixin bajar {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-color: 2px darkgrey;
+  background-color: rgb(70, 68, 68);
+  cursor: pointer;
+  outline: none;
+}
+@mixin btn-clima {
+    width: 100pz;
+    height: 26px;
+    width: 46px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+}
+@mixin velocidad {
+  border: 1px solid;
+  width: 10px;
+  border-color: darkgrey;
+}
+@mixin clima {
+ position: absolute;
+ width: 36px;
+ display: flex;
+ flex-direction: column-reverse;
+ justify-content: space-around;
+
+}
+
+
+
