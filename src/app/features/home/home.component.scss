@@ -26,17 +26,25 @@ main {
 .bg-img {
   margin-bottom: -172px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+/*.posicion {
+  width: 960px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 280px;
+  right: 169px;
+}*/
 
 .hidden {
-  transform: translate3d(0, 100%, 0);
-  transition: all linear 1s;
+  display: none;
+
 }
 
-.interior__coche {
-  height: 450px;
-}
+
 
 .interior__escala-pantalla {
   fill: silver;
@@ -48,15 +56,26 @@ main {
   cursor: pointer;
 }
 
-.interior__retro-izq {
+.interior__retro {
   cursor: pointer;
   fill: silver;
 }
+  .animacion{
+    width: 80px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(25, 46, 53, 0.144);
+    position: relative;
+    animation: mymove 3s;
+    animation-fill-mode: forwards;
+  }
 
-.interior__retro-dech {
-  cursor: pointer;
-  fill: silver;
-}
+  @keyframes mymove {
+    from {top: 0px;}
+    to {top: 20px; background-color: rgba(171, 191, 201, 0.534);}
+  }
+
+
 
 .interior__ventanilla-izq {
   fill: transparent;
@@ -90,8 +109,9 @@ svg {
 
 .izquierda--subir .interior__ventanilla-efecto2 {
   transform: none;
-
 }
+
+
 
 //========================================PANTALLA================================================
 .up {
@@ -100,9 +120,9 @@ svg {
   justify-content: space-around;
   align-items: center;
   background-color: rgb(70, 68, 68);
-  height: 316px;
   fill: darkgray;
   position: relative;
+  padding: 10px;
 
 }
 
@@ -112,7 +132,6 @@ svg {
   justify-content: space-around;
   height: 100px;
   color:darkgray;
-
 }
 
 .ventanilla__dech-subir {
@@ -136,16 +155,16 @@ svg {
 }
 
 .clima-i {
-  left: 435px;
-  top: 10px;
+  left: 371px;
+  top: 16px;
   bottom: 51px;
   @include clima;
 
 }
 
 .clima-d {
-  right: 437px;
-  top: 10px;
+  right: 368px;
+  top: 16px;
   bottom: 51px;
   @include clima;
 }
@@ -164,8 +183,8 @@ svg {
 }
 .ventilador {
   position: absolute;
-  top: 174px;
-  width: 196px;
+  top: 100px;
+  width: 160px;
   height: 48px;
   display: flex;
   flex-direction: row;
@@ -207,27 +226,24 @@ svg {
 //==============================BOTONERA=================================================================
 
 .botonera {
-  height: 64px;
   justify-content: space-around;
   display: flex;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   background-color: rgb(70, 68, 68);
-
 }
 
 
 .botonera__btn {
-  width: 48px;
+  width: 36px;
   cursor: pointer;
   border: none;
   outline: none;
   fill: darkgrey;
   background-color: rgb(70, 68, 68);
 
-  &--cruce,
-  &--cruce-auto {
-    fill: rgb(13, 224, 84)
+  &--cruce {
+    fill: rgb(13, 224, 84);
   }
 
   &--largas {
@@ -263,7 +279,7 @@ svg {
   display: flex;
   position: absolute;
   top: 136px;
-  right: 396px;
+  right: 261px;
   justify-content: space-around;
 
   &--hidden {
@@ -282,7 +298,7 @@ svg {
   display: flex;
   position: absolute;
   top: 136px;
-  right: 396px;
+  right: 266px;
   justify-content: space-around;
 
   &--hidden {
@@ -301,7 +317,7 @@ svg {
   display: flex;
   position: absolute;
   top: 161px;
-  right: 360px;
+  right: 232px;
   justify-content: space-between;
   width: 572px;
 
@@ -330,8 +346,8 @@ svg {
 
 .parabrisas {
   position: absolute;
-  left: 331px;
-  top: -17px;
+  left: 210px;
+  top: -25px;
   height: 280px;
   width: 600px;
   border-top-right-radius: 20%;

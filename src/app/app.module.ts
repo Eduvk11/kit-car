@@ -12,7 +12,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
+import { RadioComponent } from './features/radio/radio.component';
+import { TelefonoComponent } from './features/telefono/telefono.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CustomFormsModule } from 'ng2-validation'
     LoginComponent,
     InfoComponent,
     RegistroComponent,
-    HomeComponent
+    HomeComponent,
+    RadioComponent,
+    TelefonoComponent
 
   ],
   imports: [

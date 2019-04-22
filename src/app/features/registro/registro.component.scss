@@ -1,8 +1,12 @@
 @import "../../../partials/mixin";
 
-i {
-  fill: darkgrey;
+main{
+  padding: 24px;
 }
+i{
+  fill:darkgrey;
+}
+
 
 form {
   display: flex;
@@ -14,8 +18,10 @@ form {
 .btn__info {
 
   &--save {
-    fill: greenyellow;
     @include btn__info;
+    &:hover{
+      color:greenyellow;
+    }
   }
 
   &--close {
@@ -23,10 +29,9 @@ form {
     right: 20px;
     margin-left: auto;
     @include btn__info;
-    fill: red;
+    &:hover{
+      color:red;
+    }
   }
 }
 
-.icon {
-  @include icon;
-}

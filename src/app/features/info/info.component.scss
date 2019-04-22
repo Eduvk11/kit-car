@@ -1,5 +1,6 @@
 @import "../../../partials/mixin";
-.btn__info{
+
+.btn__info {
   position: absolute;
   right: 20px;
   padding-top: 24px;
@@ -8,16 +9,19 @@
   width: 62px;
   @include btn__info;
 }
-.icon{
+
+.icon {
   @include icon;
 }
 
 .grid {
-  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  margin-top: 60px;
-  margin-left: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 table {
@@ -30,6 +34,12 @@ th,
 td {
   border: 1px solid;
   padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+th{
+  background-color:rgb(150, 146, 146);
+
 }
 
 .title {
@@ -38,5 +48,5 @@ td {
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  padding: 24px;
 }
-

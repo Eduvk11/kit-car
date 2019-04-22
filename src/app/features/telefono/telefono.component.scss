@@ -1,0 +1,163 @@
+@import "../../../partials/mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}
+
+
+.up {
+  display: flex;
+  margin-bottom: -6px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(70, 68, 68);
+  fill: darkgray;
+  position: relative;
+  padding: 10px;
+}
+
+//===================================================
+
+.botonera {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  background-color: rgb(70, 68, 68);
+}
+
+h2 {
+  color: darkgray;
+  font-size: 32px;
+  text-decoration: underline;
+  margin: 3px;
+}
+
+
+.botonera__btn {
+  width: 32px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  fill: darkgrey;
+  background-color: rgb(70, 68, 68);
+
+  &--agenda,
+  &--teclado,
+  &--llamar {
+    fill: rgb(13, 224, 84)
+  }
+
+  &--favoritos {
+    fill: yellow;
+  }
+}
+
+li {
+
+  margin: 3px;
+}
+
+
+.btn__teclado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+
+  button.btn__teclado--numero {
+    @include teclado;
+  }
+
+  button.btn__teclado--numero-borrar {
+    @include teclado;
+    fill: black;
+  }
+}
+
+
+
+//=====================EFECTOS======================
+
+.agenda {
+  top: 8px;
+  left: 343px;
+  @include media-player;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+
+.favoritos {
+  top: 12px;
+  left: 343px;
+  @include media-player;
+}
+
+.teclado {
+  top: 18px;
+  left: 328px;
+  font-size: 24px;
+  @include media-player;
+
+
+  &--hidden {
+    display: none;
+  }
+
+}
+
+.area-texto {
+  position: absolute;
+  font-size: 32px;
+  color: darkgray;
+  right: 370px;
+  top: 40px;
+
+  align-items: center;
+  border: 0;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.llamar {
+  text-align: center;
+  @include media-player;
+}
+
+.area-botones {
+  position: absolute;
+  display: flex;
+  top: 96px;
+  right: 38px;
+
+
+
+  button.teclado__numero-on {
+    @include teclado;
+    fill: greenyellow;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  button.teclado__numero-off {
+    @include teclado;
+    fill: red;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

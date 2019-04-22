@@ -18,7 +18,8 @@ declare let annyang;
 })
 
 export class HomeComponent implements OnInit {
-
+  pantalla = '';
+  seleccion = '';
   hiddenScreen = true;
   hidenCruce = true;
   hidenLargas = true;
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
   hidenAntiTras = true;
   hidenParabrisas = true;
   hidenRetrovisor = true;
-  hidenTelefono = true;
+ // hidenTelefono = true;
   accionSubirDerecha = false;
   accionBajarDerecha = false;
   accionSubirIzquierda = false;
@@ -63,9 +64,6 @@ export class HomeComponent implements OnInit {
       },
       'retrovisor': function () {
         that.hideRetrovisor();
-      },
-      'telefono': function () {
-        that.hideTelefono();
       },
       'subir temperatura': function(){
         that.incrementar();
@@ -107,7 +105,11 @@ export class HomeComponent implements OnInit {
 
 //============================MOSTRAR Y OCULTAR EFECTOS============================
   hideScreen() {
-    this.hiddenScreen = !this.hiddenScreen;
+   if(this.pantalla === 'pantalla'){
+     this.pantalla = '';
+   } else {
+     this.pantalla = 'pantalla';
+   }
     this.ref.detectChanges();
   }
   hideCruce() {
@@ -134,10 +136,8 @@ export class HomeComponent implements OnInit {
     this.hidenRetrovisor = !this.hidenRetrovisor;
     this.ref.detectChanges();
   }
-  hideTelefono() {
-    this.hidenTelefono = !this.hidenTelefono;
-    this.ref.detectChanges();
-  }
+
+
   //==========================================================
   //ELEVALUNAS
   subirVentDech() {

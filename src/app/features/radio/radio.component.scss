@@ -1,0 +1,164 @@
+@import "../../../partials/mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}
+
+
+.up {
+  display: flex;
+  margin-bottom: -6px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(70, 68, 68);
+  padding: 10px;
+  fill: darkgray;
+  position: relative;
+  padding: 10px;
+}
+
+.btn__clima{
+  @include btn-clima;
+}
+
+.volumen {
+  position: absolute;
+  top: 110px;
+  width: 142px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.velocidad {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 72px;
+  height: 48px;
+}
+.volumen__1 {
+ @include velocidad;
+  height: 16px;
+}
+
+.volumen__2 {
+ @include velocidad;
+  height: 24px;
+}
+.volumen__3 {
+ @include velocidad;
+  height: 32px;
+}
+.volumen__4 {
+ @include velocidad;
+  height: 40px;
+}
+.volumen__5 {
+ @include velocidad;
+  height: 48px;
+}
+.pintar {
+  background-color: darkgrey;
+}
+
+//===========================================
+.botonera {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  background-color: rgb(70, 68, 68);
+}
+h2 {
+  color: darkgray;
+  font-size: 32px;
+}
+
+
+.botonera__btn {
+  width: 48px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  fill: darkgrey;
+  background-color: rgb(70, 68, 68);
+
+  &--radio, &--atras, &--siguiente {
+    fill: rgb(13, 224, 84);
+  }
+
+  &--bluetooth {
+    fill: blue;
+  }
+
+  &--usb {
+    fill: yellow;
+  }
+  &--play{
+    display: none;
+  }
+  &--pausa{
+    display: none;
+  }
+}
+
+//===========================Efectos==========================
+
+.radio{
+  top: 25px;
+  left: 481px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  position: absolute;
+  color: darkgrey;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.usb {
+  top: 25px;
+  left: 385px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  position: absolute;
+  color: darkgrey;
+
+
+  &--hidden {
+    display: none;
+  }
+
+}
+
+.bluetooth{
+  top: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  position: absolute;
+  color: darkgrey;
+
+
+  &--hidden {
+    display: none;
+  }
+
+}
+
+

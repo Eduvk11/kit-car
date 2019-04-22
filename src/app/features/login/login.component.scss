@@ -1,5 +1,9 @@
 @import "../../../partials/mixin";
 
+main{
+  padding: 24px
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -11,13 +15,17 @@ form {
   position: absolute;
   right: 20px;
   margin-left: auto;
-  fill: red;
   @include btn__info;
+  &:hover{
+    color: red;
+  }
 }
 
 .btn__info--save{
-  fill:rgb(134, 224, 16);
   @include btn__info;
+  &:hover{
+    color:rgb(134, 224, 16);
+  }
 }
 
 .btn__info--regis{
@@ -26,6 +34,10 @@ form {
   margin-right: auto;
   fill:darkgrey;
   @include btn__info;
+  &:hover{
+    color:blue;
+  }
+
 }
 
 i {
