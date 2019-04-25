@@ -19,13 +19,8 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" name="password" placeholder="Contaseña" #password="ngModel" ngModel required>
+      <input matInput type="password" name="password" placeholder="Contaseña" #password="ngModel" ngModel required>
       <mat-error *ngIf="password.errors?.required">Campo requerido</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput type="text" name="user" placeholder="Nombre de usuario" #user="ngModel" ngModel required>
-      <mat-error *ngIf="user.errors?.required">Campo requerido</mat-error>
     </mat-form-field>
 
     <button type="submit" class="btn__info--save" title="Go to login" [disabled]="!form.valid">Enviar</button>

@@ -28,6 +28,7 @@
   height: 24px;
   margin-right: 3px;
 }
+
 @mixin subir {
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
@@ -36,6 +37,7 @@
   cursor: pointer;
   outline: none;
 }
+
 @mixin bajar {
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%;
@@ -44,31 +46,33 @@
   cursor: pointer;
   outline: none;
 }
+
 @mixin btn-clima {
-    width: 100pz;
-    height: 26px;
-    width: 46px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    background: transparent;
+  width: 100pz;
+  height: 26px;
+  width: 46px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
 }
+
 @mixin velocidad {
   border: 1px solid;
   width: 10px;
   border-color: darkgrey;
 }
+
 @mixin clima {
- position: absolute;
- width: 36px;
- display: flex;
- flex-direction: column-reverse;
- justify-content: space-around;
+  position: absolute;
+  width: 36px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
 
 }
 
 @mixin media-player {
-
 
   display: flex;
   flex-direction: column;
@@ -77,11 +81,11 @@
   position: absolute;
   color: darkgrey;
 
-
   &--hidden {
     display: none;
   }
 }
+
 @mixin teclado {
   width: 40px;
   height: 28px;
@@ -90,8 +94,19 @@
   background-color: darkgrey;
   font-size: 24px;
   cursor: pointer;
-  border:0;
+  border: 0;
 }
 
+@mixin area-texto {
 
-
+  position: absolute;
+  font-size: 24px;
+  color: darkgray;
+  right: 370px;
+  top: 40px;
+  align-items: center;
+  border: 0;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}

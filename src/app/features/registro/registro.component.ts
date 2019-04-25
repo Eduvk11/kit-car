@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ApiServicio} from "src/servicios/api.servicio";
 
 
 @Component({
@@ -9,15 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
+  showError: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private apiServicio: ApiServicio) { }
 
   ngOnInit() {
   }
 
 
-  onSave() {
-    this.router.navigate(['..', 'login']);
+  onSave(evt) {
+    this.apiServicio.registro(evt).then(
+      response => {
+        this.router.navigate(['login']);
+      },
+      err => {
+        this.showError = true;
+      }
+    );
 
   }
   redirect(url) {

@@ -16,6 +16,9 @@ export class TelefonoComponent implements OnInit {
   pantalla = '';
   numTel = '';
   contacto = '';
+  mensaje: '';
+  nombre: '';
+  favoritos = [];
 
 
   constructor(private ref: ChangeDetectorRef) {
@@ -30,71 +33,83 @@ export class TelefonoComponent implements OnInit {
         that.hideAgenda();
       },
       'favoritos': function () {
-       that.hideFavoritos();
+        that.hideFavoritos();
       },
       'marcar': function () {
         that.hideTeclado();
       },
-      'llamar': function (){
+      'llamar': function () {
         that.hideLlamar();
       }
     });
-     annyang.start();
-    }
+    annyang.start();
+  }
 
 
-    ngOnInit() {}
-    //======================MOSTRAR Y OCULTAR EFECTOS==============
-    hideTelefono() {
-      if (this.pantalla === 'telefono') {
-        this.pantalla = '';
-      } else {
-        this.pantalla = 'telefono';
-      }
-      this.ref.detectChanges();
+  ngOnInit() {}
+  //======================MOSTRAR Y OCULTAR EFECTOS==============
+  hideTelefono() {
+    if (this.pantalla === 'telefono') {
+      this.pantalla = '';
+    } else {
+      this.pantalla = 'telefono';
     }
-    hideAgenda() {
-      if(this.seleccion === 'agenda'){
-        this.seleccion = '';
-      }else {
-        this.seleccion = 'agenda';
-      }
-      this.ref.detectChanges();
-    }
-    hideFavoritos() {
-      if(this.seleccion === 'favoritos'){
-        this.seleccion = '';
-      }else {
-        this.seleccion = 'favoritos';
-      }
-      this.ref.detectChanges();
-    }
-    hideTeclado() {
+    this.ref.detectChanges();
+  }
 
-      if(this.seleccion === 'marcar'){
-        this.seleccion = '';
-      }else {
-        this.seleccion = 'marcar';
-      }
-      this.ref.detectChanges();
+  hideAgenda() {
+    if (this.seleccion === 'agenda') {
+      this.seleccion = '';
+    } else {
+      this.seleccion = 'agenda';
     }
-    hideLlamar() {
-      if(this.seleccion === 'llamar'){
-        this.seleccion = '';
-      }else {
-        this.seleccion = 'llamar';
-      }
-      this.ref.detectChanges();
+    this.ref.detectChanges();
+  }
+
+  hideFavoritos() {
+    if (this.seleccion === 'favoritos') {
+      this.seleccion = '';
+    } else {
+      this.seleccion = 'favoritos';
     }
-    marcarNum(num){
-      if(this.numTel.length < 9 ){
-        this.numTel = `${this.numTel}${num}`;
-      }
+    this.ref.detectChanges();
+  }
+
+  hideTeclado() {
+    if (this.seleccion === 'marcar') {
+      this.seleccion = '';
+    } else {
+      this.seleccion = 'marcar';
     }
-    borrarNum(){
-      this.numTel = this.numTel.substring( 0, this.numTel.length -1);
+    this.ref.detectChanges();
+  }
+
+  hideLlamar() {
+    if (this.seleccion === 'llamar') {
+      this.seleccion = '';
+    } else {
+      this.seleccion = 'llamar';
     }
-    llamar(nombre){
-        this.contacto = nombre;
+    this.ref.detectChanges();
+  }
+
+  marcarNum(num) {
+    if (this.numTel.length < 9) {
+      this.numTel = `${this.numTel}${num}`;
     }
   }
+
+  borrarNum() {
+    this.numTel = this.numTel.substring(0, this.numTel.length - 1);
+  }
+
+  llamar(nombre) {
+    this.contacto = nombre;
+  }
+  mensajeLlamada(mensaje){
+    this.mensaje = mensaje
+  }
+  addFavoritos(nombre){
+    this.favoritos.push(nombre);
+  }
+}
