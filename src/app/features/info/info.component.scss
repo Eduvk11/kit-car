@@ -8,10 +8,14 @@
   fill: red;
   width: 62px;
   @include btn__info;
+  &:hover{
+    color:red;
+  }
 }
 
 .icon {
   @include icon;
+
 }
 
 .grid {

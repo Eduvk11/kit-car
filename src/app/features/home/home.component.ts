@@ -47,7 +47,13 @@ export class HomeComponent implements OnInit {
 //COMANDOS DE VOZ
     annyang.addCommands({
       'pantalla': function () {
-        that.hideScreen();
+        that.changeScreem('pantalla');
+      },
+      'musica': function () {
+        that.changeScreem('musica');
+      },
+      'telefono': function () {
+        that.changeScreem('telefono');
       },
       'cortas': function () {
         that.hideCruce();
@@ -104,12 +110,9 @@ export class HomeComponent implements OnInit {
   }
 
 //============================MOSTRAR Y OCULTAR EFECTOS============================
-  hideScreen() {
-   if(this.pantalla === 'pantalla'){
-     this.pantalla = '';
-   } else {
-     this.pantalla = 'pantalla';
-   }
+  changeScreem(nombre) {
+    this.pantalla = nombre;
+
     this.ref.detectChanges();
   }
   hideCruce() {

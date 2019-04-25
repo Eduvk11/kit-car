@@ -2,10 +2,16 @@
 //====================================HEADER=======================================================
 .btn__info {
   @include btn__info;
+  &:hover{
+    color:greenyellow;
+  }
 }
 
 .icon {
   @include icon;
+  &:hover{
+    fill:greenyellow;
+  }
 }
 
 header {
@@ -39,10 +45,9 @@ main {
   right: 169px;
 }*/
 
-.hidden {
-  display: none;
-
-}
+//.hidden {
+//  display: none;
+//}
 
 
 
@@ -60,7 +65,7 @@ main {
   cursor: pointer;
   fill: silver;
 }
-  .animacion{
+  /*.animacion{
     width: 80px;
     height: 24px;
     border-radius: 50%;
@@ -73,7 +78,7 @@ main {
   @keyframes mymove {
     from {top: 0px;}
     to {top: 20px; background-color: rgba(171, 191, 201, 0.534);}
-  }
+  }*/
 
 
 

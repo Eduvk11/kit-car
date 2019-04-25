@@ -73,7 +73,7 @@
 }
 
 @mixin media-player {
-
+  padding: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

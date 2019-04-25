@@ -32,9 +32,7 @@ export class RadioComponent implements OnInit {
     const that = this;
 
     annyang.addCommands({
-      'musica': function () {
-        that.hideMusica();
-      },
+
       'radio': function () {
         that.hideRadio();
       },
@@ -62,14 +60,7 @@ export class RadioComponent implements OnInit {
     this.divPintados = [false, false, false, false, false];
   }
   //====================MOSTRAR Y OCULTAR EFECTOS=======
-  hideMusica(){
-    if (this.pantalla === 'musica') {
-      this.pantalla = '';
-    } else {
-      this.pantalla = 'musica';
-    }
-    this.ref.detectChanges();
-  }
+
   hideRadio() {
     if (this.seleccion === 'radio') {
       this.seleccion = '';

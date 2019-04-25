@@ -3,6 +3,7 @@ import {
   OnInit,
   ChangeDetectorRef
 } from '@angular/core';
+import { debug } from 'util';
 
 declare let annyang;
 @Component({
@@ -26,9 +27,7 @@ export class TelefonoComponent implements OnInit {
     const that = this;
 
     annyang.addCommands({
-      'telefono': function () {
-        that.hideTelefono();
-      },
+
       'agenda': function () {
         that.hideAgenda();
       },
@@ -48,14 +47,6 @@ export class TelefonoComponent implements OnInit {
 
   ngOnInit() {}
   //======================MOSTRAR Y OCULTAR EFECTOS==============
-  hideTelefono() {
-    if (this.pantalla === 'telefono') {
-      this.pantalla = '';
-    } else {
-      this.pantalla = 'telefono';
-    }
-    this.ref.detectChanges();
-  }
 
   hideAgenda() {
     if (this.seleccion === 'agenda') {
@@ -65,6 +56,13 @@ export class TelefonoComponent implements OnInit {
     }
     this.ref.detectChanges();
   }
+  changeScreem(nombre) {
+    debugger
+    this.pantalla = nombre;
+
+    this.ref.detectChanges();
+  }
+
 
   hideFavoritos() {
     if (this.seleccion === 'favoritos') {
@@ -74,6 +72,7 @@ export class TelefonoComponent implements OnInit {
     }
     this.ref.detectChanges();
   }
+
 
   hideTeclado() {
     if (this.seleccion === 'marcar') {
