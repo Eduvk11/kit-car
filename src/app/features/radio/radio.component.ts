@@ -22,8 +22,10 @@ export class RadioComponent implements OnInit {
   divPintados: Array < any > ;
   volumen: number;
 
-   sound = new Howl({
-    src: ['assets/musica/1.mp3', 'assets/musica/2.mp3', 'assets/musica/3.mp3', 'assets/musica/4.mp3']
+  sound = new Howl({
+    src: ['assets/musica/1.mp3', 'assets/musica/2.mp3', 'assets/musica/3.mp3', 'assets/musica/4.mp3'],
+    loop: false,
+    volume: 0.1
   });
 
 
@@ -48,7 +50,10 @@ export class RadioComponent implements OnInit {
       'bajar volumen': function () {
         that.bajarVolumen();
       },
-      'play': function () {
+      'play': function () {
+        that.play();
+      },
+      'pausa': function () {
         that.play();
       }
     });
@@ -112,12 +117,40 @@ export class RadioComponent implements OnInit {
 
   play() {
     if (this.seleccion === 'play') {
+      this.sound.pause()
       this.seleccion = '';
     } else {
+      this.sound.play()
       this.seleccion = 'play';
     }
     this.ref.detectChanges();
   }
+  siguiente() {
+    debugger;
+    this.sound.skip('next');
+  }
+  anterior() {
+    this.sound.skip('prev');
+  }
 
 
 }
+/*$(function () {
+      $("#howler-volup").on("click", function () {
+        var vol = howler_example.volume();
+        vol += 0.1;
+        if (vol > 1) {
+          vol = 1;
+        }
+        howler_example.volume(vol);
+      });
+
+      $("#howler-voldown").on("click", function () {
+        var vol = howler_example.volume();
+        vol -= 0.1;
+        if (vol < 0) {
+          vol = 0;
+        }
+        howler_example.volume(vol);
+      });
+    }*/

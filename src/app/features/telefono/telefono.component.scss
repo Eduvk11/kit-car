@@ -35,7 +35,6 @@
 h2 {
   color: darkgray;
   font-size: 24px;
-  text-decoration: underline;
   margin: 3px;
 }
 
@@ -47,6 +46,8 @@ h2 {
   outline: none;
   fill: darkgrey;
   background-color: rgb(70, 68, 68);
+  color: darkgrey;
+  font-size: 18px;
 
   &--agenda,
   &--teclado,
@@ -56,6 +57,9 @@ h2 {
 
   &--favoritos {
     fill: yellow;
+  }
+  &--sos{
+    color:red;
   }
 }
 
@@ -126,6 +130,16 @@ li {
 .area-texto__marcar {
   @include area-texto;
 }
+.area-texto__ayuda{
+  position: absolute;
+  font-size: 48px;
+  color: red;
+  top: 70px;
+
+  &--hidden {
+    display:none;
+  }
+}
 
 
 .llamar {
@@ -138,8 +152,6 @@ li {
   display: flex;
   top: 147px;
   right: 375px;
-
-
 
   button.teclado__numero-on {
     @include teclado;
