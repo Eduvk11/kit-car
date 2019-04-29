@@ -17,6 +17,9 @@ import { RadioComponent } from './features/radio/radio.component';
 import { TelefonoComponent } from './features/telefono/telefono.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ApiServicio } from "src/servicios/api.servicio";
+import { LoginGuard } from './guards/login.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { ApiServicio } from "src/servicios/api.servicio";
     CustomFormsModule,
     HttpClientModule,
   ],
-  providers: [ApiServicio,],
+  providers: [ApiServicio, LoginGuard, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

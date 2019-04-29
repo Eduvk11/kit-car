@@ -68,10 +68,10 @@
       <!--==============================================TEMP RADIO TELEF GPS==================================-->
       <!--RADIO-->
       <div class="radio" [class.radio--hidden]="seleccion !== 'radio'">
-        <p>Radio 3</p>
-        <p>Rock FM</p>
-        <p>SER</p>
-        <p>M 80</p>
+        <button (click)="playRadio()" >Radio 3</button>
+        <p (click)="playRadio()" >Rock FM</p>
+        <p (click)="playRadio()" >SER</p>
+        <p (click)="playRadio()" >M 80</p>
       </div>
       <!--USB-->
       <div class="usb" [class.usb--hidden]="seleccion !== 'auxiliar'">

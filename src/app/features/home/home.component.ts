@@ -18,6 +18,9 @@ declare let annyang;
 })
 
 export class HomeComponent implements OnInit {
+  logOut() {
+    throw new Error("Method not implemented.");
+  }
   pantalla = '';
   seleccion = '';
   hiddenScreen = true;
@@ -27,7 +30,7 @@ export class HomeComponent implements OnInit {
   hidenAntiTras = true;
   hidenParabrisas = true;
   hidenRetrovisor = true;
- // hidenTelefono = true;
+  // hidenTelefono = true;
   accionSubirDerecha = false;
   accionBajarDerecha = false;
   accionSubirIzquierda = false;
@@ -36,7 +39,7 @@ export class HomeComponent implements OnInit {
   actual: number;
   velocidad: number;
   flag: boolean;
-  divPintados: Array<any>;
+  divPintados: Array < any > ;
 
 
 
@@ -44,7 +47,8 @@ export class HomeComponent implements OnInit {
     annyang.setLanguage('es-ES');
     const that = this;
 
-//COMANDOS DE VOZ
+
+    //COMANDOS DE VOZ
     annyang.addCommands({
       'pantalla': function () {
         that.changeScreem('pantalla');
@@ -71,34 +75,34 @@ export class HomeComponent implements OnInit {
       'retrovisor': function () {
         that.hideRetrovisor();
       },
-      'subir temperatura': function(){
+      'subir temperatura': function () {
         that.incrementar();
       },
-      'bajar temperatura': function(){
+      'bajar temperatura': function () {
         that.decrementar();
       },
-      'subir ventilador': function(){
+      'subir ventilador': function () {
         that.subirVelocidad();
       },
-      'bajar ventilador': function(){
+      'bajar ventilador': function () {
         that.bajarVelocidad();
       },
-      'bajar ventanilla izquierda': function(){
+      'bajar ventanilla izquierda': function () {
         that.bajarVentIzq();
       },
-      'subir ventanilla izquierda': function(){
+      'subir ventanilla izquierda': function () {
         that.subirVentIzq();
       },
-      'bajar ventanilla derecha': function(){
+      'bajar ventanilla derecha': function () {
         that.bajarVentDech();
       },
-      'subir ventanilla derecha': function(){
+      'subir ventanilla derecha': function () {
         that.subirVentDech();
       }
     });
     annyang.start();
   }
-//====================================================
+  //====================================================
   ngOnInit() {
     this.actual = 21;
     this.velocidad = 0;
@@ -109,7 +113,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
-//============================MOSTRAR Y OCULTAR EFECTOS============================
+  //============================MOSTRAR Y OCULTAR EFECTOS============================
   changeScreem(nombre) {
     this.pantalla = nombre;
 
@@ -144,7 +148,7 @@ export class HomeComponent implements OnInit {
   //==========================================================
   //ELEVALUNAS
   subirVentDech() {
-    this.accionSubirDerecha =false;
+    this.accionSubirDerecha = false;
     this.ref.detectChanges();
   }
   bajarVentDech() {
@@ -156,7 +160,7 @@ export class HomeComponent implements OnInit {
     this.ref.detectChanges();
   }
   bajarVentIzq() {
-    this.accionSubirIzquierda =true ;
+    this.accionSubirIzquierda = true;
     this.ref.detectChanges();
   }
   //=========================================================
@@ -170,7 +174,7 @@ export class HomeComponent implements OnInit {
 
   decrementar() {
     if (this.actual > 16 && this.actual <= 32) {
-    this.actual--;
+      this.actual--;
     }
     this.ref.detectChanges();
   }
@@ -181,13 +185,13 @@ export class HomeComponent implements OnInit {
   }
   //===========================================
   //VENTILADOR
-  subirVelocidad(){
+  subirVelocidad() {
     this.velocidad++
     this.checkClases(true);
     this.ref.detectChanges();
   }
   bajarVelocidad() {
-    if(this.velocidad > 0){
+    if (this.velocidad > 0) {
       this.velocidad--
       this.checkClases(false);
       this.ref.detectChanges();
@@ -196,11 +200,11 @@ export class HomeComponent implements OnInit {
   }
   checkClases(flag) {
     if (flag) {
-      for (let i=0; i < this.velocidad; i++) {
+      for (let i = 0; i < this.velocidad; i++) {
         this.divPintados[i] = flag
       }
     } else {
-      for (let i=5; i >= this.velocidad; i--) {
+      for (let i = 5; i >= this.velocidad; i--) {
         this.divPintados[i] = flag;
       }
     }

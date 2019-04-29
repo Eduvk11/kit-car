@@ -18,28 +18,31 @@ import {
 import {
   RegistroComponent
 } from './features/registro/registro.component';
+import { LoginGuard } from './guards/login.guard';
 
-const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
+
+const routes: Routes = [{
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
   },
   {
-    path: 'info',
-    component: InfoComponent,
-  },
-  {
-    path: 'login',
+    path: "login",
     component: LoginComponent
+  },
+  {
+    path: "home",
+    component: HomeComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: "info",
+    component: InfoComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'registro',
     component: RegistroComponent
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
   }
 ];
 

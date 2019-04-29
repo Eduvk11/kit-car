@@ -121,7 +121,7 @@ export class TelefonoComponent implements OnInit {
       },
       'colgar': function () {
         that.mensajeLlamada('');
-        that.llamar('');
+        that.borrarNumTel();
       }
     });
 
@@ -144,7 +144,7 @@ export class TelefonoComponent implements OnInit {
   }
 
   changeScreem(nombre) {
-    debugger;
+
     this.pantalla = nombre;
 
     this.ref.detectChanges();
@@ -210,6 +210,12 @@ export class TelefonoComponent implements OnInit {
     this.mensaje = mensaje;
     this.ref.detectChanges();
   }
+
+  borrarNumTel() {
+    this.numTel = '';
+    this.ref.detectChanges();
+  }
+
   addFavoritos(nombre) {
     this.favoritos.push(nombre);
     this.ref.detectChanges();
