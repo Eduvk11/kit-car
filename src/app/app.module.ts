@@ -18,6 +18,8 @@ import { TelefonoComponent } from './features/telefono/telefono.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ApiServicio } from "src/servicios/api.servicio";
 import { LoginGuard } from './guards/login.guard';
+//import { ReproductorHowlComponent } from './features/reproductor-howl/reproductor-howl.component';
+//import { RadioHowlComponent } from './features/radio-howl/radio-howl.component';
 
 
 
@@ -29,7 +31,9 @@ import { LoginGuard } from './guards/login.guard';
     RegistroComponent,
     HomeComponent,
     RadioComponent,
-    TelefonoComponent
+    TelefonoComponent,
+   // ReproductorHowlComponent,
+    //RadioHowlComponent
 
   ],
   imports: [
